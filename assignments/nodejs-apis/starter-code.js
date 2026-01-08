@@ -172,7 +172,7 @@ app.get('/users', (req, res) => {
         
         // Apply pagination
         const page = parseInt(req.query.page) || 1;
-        const limit = parseInt(req.query.limit) || 10;
+        const limit = Math.min(parseInt(req.query.limit) || 10, 100); // Cap at 100
         
         if (page < 1 || limit < 1) {
             return res.status(400).json({
