@@ -58,6 +58,20 @@
           "type": "csv"
         }
       ]
+    },
+    {
+      "id": "fastapi-rest-apis",
+      "title": "Construindo APIs REST com FastAPI",
+      "description": "Build robust REST APIs using FastAPI framework with authentication and automatic documentation.",
+      "path": "assignments/fastapi-rest-apis",
+      "dueDate": "2026-01-15",
+      "attachments": [
+        {
+          "name": "Starter Code",
+          "file": "starter-code.py",
+          "type": "python"
+        }
+      ]
     }
   ]
 }
