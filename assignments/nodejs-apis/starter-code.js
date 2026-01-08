@@ -15,6 +15,8 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 // CORS middleware
+// Note: Using '*' for educational purposes to allow testing from any origin
+// In production, specify allowed origins explicitly
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
@@ -66,6 +68,8 @@ function findUserById(id) {
 
 /**
  * Validate user data
+ * Note: This uses simple validation for educational purposes.
+ * In production, use a validation library like Joi or express-validator.
  */
 function validateUser(data) {
     const errors = [];
@@ -74,6 +78,8 @@ function validateUser(data) {
         errors.push('Name is required and must be a non-empty string');
     }
     
+    // Simple email validation for learning purposes
+    // In production, use a proper email validation library
     if (!data.email || typeof data.email !== 'string' || !data.email.includes('@')) {
         errors.push('Valid email is required');
     }
@@ -271,6 +277,16 @@ app.delete('/users/:id', (req, res) => {
 });
 
 // ============================================================================
+// 404 handler - Route not found (must be before error handler)
+// ============================================================================
+
+app.use((req, res) => {
+    res.status(404).json({
+        error: 'Route not found'
+    });
+});
+
+// ============================================================================
 // Error handling middleware (must be last)
 // ============================================================================
 
@@ -278,13 +294,6 @@ app.use((err, req, res, next) => {
     console.error('Error:', err);
     res.status(err.status || 500).json({
         error: err.message || 'Internal server error'
-    });
-});
-
-// Handle 404 - Route not found
-app.use((req, res) => {
-    res.status(404).json({
-        error: 'Route not found'
     });
 });
 
