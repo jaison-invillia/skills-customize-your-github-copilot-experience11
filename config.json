@@ -72,6 +72,20 @@
           "type": "python"
         }
       ]
+    },
+    {
+      "id": "nodejs-apis",
+      "title": "Criando APIs com NodeJS",
+      "description": "Learn to create RESTful APIs using Node.js and Express.js with middlewares, validation, and pagination.",
+      "path": "assignments/nodejs-apis",
+      "dueDate": "2026-02-05",
+      "attachments": [
+        {
+          "name": "Starter Code",
+          "file": "starter-code.js",
+          "type": "javascript"
+        }
+      ]
     }
   ]
 }
