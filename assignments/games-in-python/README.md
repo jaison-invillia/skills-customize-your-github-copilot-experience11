@@ -1,10 +1,10 @@
 # 📘 Assignment: Games in Python
 
-## 🎯 Objective
+## 🎯 Objetivo
 
 Students will create interactive games using Python. They will practice using strings, loops, conditionals, and user input to build engaging command-line games.
 
-## 📝 Tasks
+## 📝 Tarefas
 
 ### 🛠️ Hangman Game
 
